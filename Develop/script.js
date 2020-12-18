@@ -1,10 +1,14 @@
 // List of User Inputs Variables
-var userInput;
-var useNumber;
-var useSpecialCharacter;
-var useUpperCase;
-var useLowerCase;
+    // gets length of password from user 
+    var userInput;
 
+    // variables that gets if user wants numbers, special characters, and upper or lower case letters.
+    var useNumber;
+    var useSpecialCharacter;
+    var useUpperCase;
+    var useLowerCase;
+
+// Makes users selection an array.
 var choices = [];
 
 // Array of special characters to be included in password
@@ -16,19 +20,10 @@ var lowerCasedCharacters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k
 // Array of uppercase characters to be included in password
 var upperCasedCharacters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
 
-
-
-
-/**
- * function getUserInput
- *  - check if number
- *  - if not run getUserInput again
- *  - if number move on
- */
-
+// Gets user number between 8 and 128.
 function getUserInput() {
-  userInput = prompt("How many characters would you like your password to be? Password must be at least 8 characters and no more than 128.");
-  // If user input is not a number 
+  userInput = prompt("How many characters would you like your password to be?\nPlease input a number between 8 and 128.");
+  // If user input is not a number say Please enter a valid number, then prompt userInput again.
   if (isNaN(userInput)) {
     alert("Please enter a valid number.");
     getUserInput();
@@ -38,6 +33,10 @@ function getUserInput() {
     userInput = prompt("Please input a number between 8 and 128.");
     getUserInput();
   }
+  // If they hit cancel, exit prompt. 
+  else if (userInput === null) {
+  return;
+}
 
   // Ask user for special, number, lower, and uppercase characters
   else {
@@ -49,7 +48,7 @@ function getUserInput() {
 function userChoice() {
   useSpecialCharacter = confirm("Do you want a special character in your password?");
   useNumber = confirm("Do you want a number in your password?");
-  useLowerCase = confirm("Do you want a lowercased character in you password?");
+  useLowerCase = confirm("Do you want a lowercase character in you password?");
   useUpperCase = confirm("Do you want a uppercase character in you password?");
 }
 
@@ -60,7 +59,6 @@ function generatePassword() {
   getUserInput();
 
   // If user declines special, number, lower, and uppercase characters "you must select one criteria"
-
   if (!useSpecialCharacter && !useNumber && !useUpperCase && !useLowerCase) {
     alert("You must select one criteria.");
     userChoice();
