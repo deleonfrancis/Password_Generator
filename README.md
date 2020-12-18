@@ -2,6 +2,7 @@
 
 > This Web Application generates a random password. 
 
+<img width="2560" alt="passwordGen" src="https://user-images.githubusercontent.com/72702894/102663665-4b828980-414f-11eb-92ad-f41b48b22d9b.png">
 
 ---
 
@@ -20,6 +21,8 @@
 This Web Application generates a random password. This was accomplished using HTML, CSS, and Javascript. See [How To Use](#how-to-use) section for an explanation of how it works. Javascript was used mainly to access information from the HTML Doc and provide it with some functionality. I used Arrays to store the necessary characters i.e. special, numbers, upper case, and lower case characters. Created variables for user input and set there choices to an array. Generated a function that prompts the user for their length, and choices of characters. Once this is completed, I created a function with a series of if ,else if, and else statement to record the user choices. All this is set to happen on click of the red "Generate Password" button.
 
 Overall a very, very challenging project, but I can away with a better understanding of variables, functions, arrays, concatenating, if statements, loops, and using Direct Object Manipulation.  
+
+---
 
 #### Technologies
 
